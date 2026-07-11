@@ -251,8 +251,8 @@ export default function Hero() {
               style={{ transform: 'translateZ(20px)' }} // 3D depth pop-out
             >
               <img
-                src="/profile.jpg"
-                alt="Shrawan Kumar Gupta Profile Avatar"
+                src={`${(import.meta as any).env.BASE_URL || '/'}profile.jpg`}
+                alt="Shrawan Kumar Gupta"
                 className="w-full h-full object-cover select-none transition-transform duration-700 ease-out"
                 style={{
                   transform: isHovered 
@@ -261,6 +261,9 @@ export default function Hero() {
                   transition: isHovered ? 'none' : 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)',
                 }}
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error("Profile image failed to load:", e.currentTarget.src);
+                }}
               />
               
               {/* Scanlines visual texture overlay */}
