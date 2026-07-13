@@ -251,7 +251,7 @@ export default function Hero() {
               style={{ transform: 'translateZ(20px)' }} // 3D depth pop-out
             >
               <img
-                src={`/profile.JPG`}
+                src={`/profile.jpg`}
                 alt="Shrawan Kumar Gupta"
                 className="w-full h-full object-cover select-none transition-transform duration-700 ease-out"
                 style={{
